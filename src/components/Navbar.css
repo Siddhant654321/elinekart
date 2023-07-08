@@ -50,3 +50,60 @@
     border-bottom-right-radius: 100px;
     cursor: pointer;
 }
+
+@media (max-width: 1264px) {
+    .navbar_container {
+        padding: 15px 54px;
+    }
+}
+
+@media (max-width: 1168px) {
+    .navbar_title {
+        font-size: 48px;
+    }
+    .navbar_links {
+        font-size: 24px;
+    }
+    .navbar_search_button {
+        padding: 11px 29px 10px 0px;
+    }
+    .navbar_links_container {
+        gap: 22px;
+    }
+}
+
+@media (max-width: 989px) {
+    .navbar_search_button>img {
+        height: 25px;
+        width: 25px;
+    }
+    .navbar_search_input {
+        font-size: 18px;
+        width: 170px;
+        padding-top: 9px;
+        padding-bottom: 9px;
+    }
+    .navbar_search_button {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+}
+
+@media (max-width: 827px) {
+    .navbar_title {
+        font-size: 36px;
+    }
+    .navbar_links {
+        font-size: 18px;
+    }
+    .navbar_container {
+        padding: 10px 32px;
+    }
+    .navbar_search_button>img {
+        height: 21px;
+        width: 21px;
+    }
+    .navbar_search_input {
+        font-size: 15px;
+    }
+}
