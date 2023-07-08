@@ -1,0 +1,28 @@
+.navbar_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 109px;
+}
+
+.navbar_links,
+.navbar_title {
+    font-weight: 400;
+    font-family: var(--second-family);
+    color: #f8f8f8;
+    margin: 0px;
+}
+
+.navbar_title {
+    font-size: 64px;
+}
+
+.navbar_links_container {
+    display: flex;
+    gap: 44px;
+}
+
+.navbar_links {
+    font-size: 36px;
+    text-decoration: none;
+}

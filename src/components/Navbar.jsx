@@ -1,7 +1,7 @@
 import './Navbar.css'
 const Navbar = () => {
   return (
-    <div>
+    <div className='navbar_container'>
         <div className='navbar_title_container'>
             <p className='navbar_title'>ELINEKART</p>
         </div>
