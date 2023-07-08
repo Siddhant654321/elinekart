@@ -27,6 +27,14 @@
     text-decoration: none;
 }
 
+.navbar_links:hover {
+    color: #A28140;
+}
+
+.navbar_links:active {
+    opacity: 0.8;
+}
+
 .navbar_search_container {
     display: flex;
     align-items: center;
