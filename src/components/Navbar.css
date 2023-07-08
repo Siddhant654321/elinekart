@@ -26,3 +26,27 @@
     font-size: 36px;
     text-decoration: none;
 }
+
+.navbar_search_container {
+    display: flex;
+    align-items: center;
+}
+
+.navbar_search_input {
+    font-family: Poppins;
+    font-size: 24px;
+    padding: 11px 0px 11px 29px;
+    border: none;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+    outline: none;
+}
+
+.navbar_search_button {
+    padding: 10px 29px 10px 0px;
+    background-color: white;
+    border: none;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+    cursor: pointer;
+}
