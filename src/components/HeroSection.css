@@ -53,6 +53,10 @@
     border: none;
 }
 
+.explore_btn_link_tag {
+    text-decoration: none;
+}
+
 .explore_btn:hover {
     opacity: 0.8;
 }

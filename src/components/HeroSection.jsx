@@ -1,6 +1,7 @@
 import "./HeroSection.css";
 import hero_image from "../assets/hero_image.png";
 import arrow_icon from "../assets/arrow_icon.svg";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
@@ -10,9 +11,11 @@ const HeroSection = () => {
           WE OFFER YOU THE <span>BEST </span> COLLECTION OF <span>GADGETS</span>
         </h1>
         <p>Your ultimate destination for the finest electronic gadgets</p>
-        <button className="explore_btn">
-          Explore the collection <img src={arrow_icon} alt="" />
-        </button>
+        <Link className="explore_btn_link_tag">
+          <button className="explore_btn">
+            Explore the collection <img src={arrow_icon} alt="" />
+          </button>
+        </Link>
       </div>
       <div className="right_side">
         <img src={hero_image} alt="" />

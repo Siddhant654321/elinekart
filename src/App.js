@@ -1,22 +1,25 @@
-import Footer from "./components/Footer"
-import HeroSection from "./components/HeroSection"
-import Homepage from "./components/Homepage"
-import Navbar from "./components/Navbar"
-import Products from "./components/Products"
-import { RouterProvider, createBrowserRouter } from "react-router-dom"
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+import Homepage from "./components/Homepage";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+
+const Layout = ({ children }) => (
+  <>
+    <Navbar />
+    <main>{children}</main>
+    <Footer />
+  </>
+);
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Navbar />,
+    element: <Layout />,
     children: [
-      {
-        index: true,
-        element: <Homepage />
-      },
+      { index: true, element: <Homepage /> },
     ]
   }
-])
+]);
 
 const App = () => {
   return (

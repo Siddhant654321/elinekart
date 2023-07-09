@@ -3,7 +3,7 @@ import search_icon from '../assets/search_icon.svg';
 import close_icon from '../assets/close_icon.svg';
 import hamburger_icon from '../assets/hamburger_icon.svg';
 import { useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 
 const Navbar = () => {
 
@@ -22,9 +22,9 @@ const Navbar = () => {
             <button type='submit' className='navbar_search_button'><img src={search_icon} height={34} width={34} /></button>
         </form>
         <div className={`navbar_links_container ${showMenu && 'show_menu'}`}>
-            <a className='navbar_links' href='#'>CART</a>
-            <a className='navbar_links' href='#'>SIGN IN</a>
-            <a className='navbar_links' href='#'>REGISTER</a>
+            <Link className='navbar_links' href='#'>CART</Link>
+            <Link className='navbar_links' href='#'>SIGN IN</Link>
+            <Link className='navbar_links' href='#'>REGISTER</Link>
         </div>
     </div>
     <Outlet />
