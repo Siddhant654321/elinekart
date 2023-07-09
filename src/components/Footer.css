@@ -1,0 +1,22 @@
+.footer_section {
+    display: flex;
+    height: 74px;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer_section p {
+    margin: 0px;
+    color: #FBFBFB;
+    font-family: var(--font-family);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+}
+
+@media (max-width: 423px) {
+    .footer_section p {
+        font-size: 16px;
+    }
+}
