@@ -13,7 +13,7 @@ const Navbar = () => {
     <>
     <div className='navbar_container'>
         <div className='navbar_title_container'>
-            <p className='navbar_title'>ELINEKART</p>
+            <Link to="/" className='navbar_title'>ELINEKART</Link>
         </div>
         {!showMenu ? <img src={hamburger_icon} className='hamburger_icon' onClick={() => setShowMenu(() => true)} />
         : <img src={close_icon} className='close_icon' onClick={() => setShowMenu(() => false)} />}

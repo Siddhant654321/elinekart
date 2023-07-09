@@ -15,6 +15,7 @@
 
 .navbar_title {
     font-size: 64px;
+    text-decoration: none;
 }
 
 .navbar_links_container {
