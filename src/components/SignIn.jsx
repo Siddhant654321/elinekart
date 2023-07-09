@@ -2,6 +2,7 @@ import './SignIn.css';
 import email_icon from '../assets/email_icon.svg'
 import password_icon from '../assets/password_icon.svg'
 import login_img from '../assets/login_img.png'
+import { Link } from 'react-router-dom';
 
 const SignIn = () => {
   return (
