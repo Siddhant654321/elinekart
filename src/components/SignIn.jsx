@@ -25,7 +25,7 @@ const SignIn = () => {
                     <button>LOGIN</button>
                 </div>
             </form>
-            <p>New Customer? <a href="#">Register</a></p>
+            <p>New Customer? <Link to="/register">Register</Link></p>
         </div>
     </main>
   )
