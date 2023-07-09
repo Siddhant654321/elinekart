@@ -22,9 +22,9 @@ const Navbar = () => {
             <button type='submit' className='navbar_search_button'><img src={search_icon} height={34} width={34} /></button>
         </form>
         <div className={`navbar_links_container ${showMenu && 'show_menu'}`}>
-            <Link className='navbar_links' href='#'>CART</Link>
-            <Link className='navbar_links' href='#'>SIGN IN</Link>
-            <Link className='navbar_links' href='#'>REGISTER</Link>
+            <Link className='navbar_links' to='/cart'>CART</Link>
+            <Link className='navbar_links' to='/signin'>SIGN IN</Link>
+            <Link className='navbar_links' to='/register'>REGISTER</Link>
         </div>
     </div>
     <Outlet />

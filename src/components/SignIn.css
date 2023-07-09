@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Koulen&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --font-family: "Poppins", sans-serif;
+  --second-family: "Koulen", sans-serif;
+}
+
+body {
+  background-color: #121618;
+  margin: 0;
+}
+
+
+/* Starts here */
+
+.login_container {
+    display: flex;
+    max-height: 95vh;
+}
+
+.login_left_side {
+    width: 50%;
+}
+
+.login_img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.login_right_side,
+.login_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login_right_side {
+    justify-content: center;
+    flex: 1;
+}
+
+.login_form {
+    width: 80%;
+    margin-top: 32px;
+    gap: 28px;
+}
+
+.login_right_side h1 {
+    color: #A28140;
+    font-family: var(--second-family);
+    font-size: 82.286px;
+    margin-bottom: -20px !important;
+}
+
+.login_right_side h2 {
+    color: #FFF;
+    font-family: var(--font-family);
+    font-size: 30.857px;
+    line-height: normal;
+}
+
+.login_right_side h1,
+.login_right_side h2 {
+    font-weight: 400;
+    margin: 0px;
+}
+
+.login_form div {
+    display: flex;
+    width: 100%;
+}
+
+.login_form input {
+    padding: 23px 33px 23px 10px;
+    color: #333;
+    font-family: var(--font-family);
+    font-size: 30px;
+    font-weight: 400;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+    border: 0px;
+    outline: none;
+    flex: 1;
+}
+
+.login_form img {
+    padding: 23px 0px 23px 33px;
+    background-color: white;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+}
+
+.login_form button {
+    border-radius: 100px;
+    background: #A28140;
+    color: #FFF;
+    font-family: var(--second-family);
+    font-size: 41px;
+    border: none;
+    flex: 1;
+    padding: 7px 33px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.login_form button:hover {
+    opacity: 0.8;
+}
+
+.login_form button:active {
+    opacity: 0.7;
+}
+
+.login_right_side p {
+    color: #fff;
+    font-size: 18px;
+    font-family: var(--font-family);
+    font-weight: 400;
+}
+
+.login_right_side a {
+    color: #fff;
+}

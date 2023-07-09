@@ -2,6 +2,7 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Homepage from "./components/Homepage";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import SignIn from "./components/SignIn";
 
 const Layout = ({ children }) => (
   <>
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       { index: true, element: <Homepage /> },
+      { path: '/signin', element: <SignIn /> },
     ]
   }
 ]);
