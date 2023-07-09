@@ -93,3 +93,68 @@
     display: flex;
     gap: 6px;
 }
+
+/* Media Queries for both Products.jsx component and ProductTab.jsx component */
+
+@media (max-width: 1291px) and (min-width: 1059px) {
+    .products_list {
+        padding: 0px 20px;
+    }
+}
+
+@media (max-width: 1206px) and (min-width: 1059px) {
+    .product_tab {
+        width: 250px;
+        margin: 0px 10px 60px 15px;
+    }
+    .product_img {
+        height: 185px;
+    }
+    .products_list {
+        padding: 0px 45px;
+    }
+}
+
+@media (max-width: 1058px) {
+    .product_tab {
+        margin: 0px 15px 60px 15px;
+    }
+}
+
+@media (max-width: 938px) and (min-width: 776px) {
+    .product_tab {
+        width: 280px;
+        margin: 0px 10px 60px 15px;
+    }
+    .product_img {
+        height: 205px;
+    }
+}
+
+@media (max-width: 834px) and (min-width: 776px) {
+    .product_tab {
+        width: 250px;
+    }
+    .product_img {
+        height: 185px;
+    }
+}
+
+@media (max-width: 776px) {
+    .products_list {
+        justify-content: center;
+        padding: 0px 14px;
+    }
+}
+
+@media (max-width: 431px) {
+    .products_heading {
+        font-size: 48px;
+    }
+    .product_tab {
+        width: 280px;
+    }
+    .product_img {
+        height: 205px;
+    }
+}
