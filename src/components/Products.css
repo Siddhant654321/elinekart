@@ -9,6 +9,14 @@
     margin: 44px 0px;
 }
 
+.products_list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px 64px;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
 /* Styles for the ProductTab Component */
 
 .product_tab {
@@ -17,6 +25,7 @@
     border-radius: 25px;
     background: #121618;
     box-shadow: 4px 4px 58.8px -11px #000, 0px 4px 4px 0px #000;
+    margin-bottom: 60px;
 }
 
 .product_img {
