@@ -25,6 +25,7 @@
     height: 242px;
     object-fit: cover;
 }
+
 .product_title {
     color: #A28140;
     font-family: var(--font-family);
@@ -44,4 +45,10 @@
     line-height: 20px;
     letter-spacing: 0.2px;
     margin: 0px;
+}
+
+.star_rating {
+    margin-bottom: 9px;
+    display: flex;
+    gap: 6px;
 }
