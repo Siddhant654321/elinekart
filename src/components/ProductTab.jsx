@@ -24,7 +24,10 @@ const ProductTab = ({ img, title, price, rating }) => {
   return (
     <div className="product_tab">
       <img className="product_img" src={img} alt={title} />
-      <h3 className="product_title">{title}</h3>
+      <div className='product_tab_flex'>
+        <h3 className="product_title">{title}</h3>
+        <button className='add_to_cart_btn'>+</button>
+      </div>
       <div className='star_rating'>
         {stars}
       </div>
