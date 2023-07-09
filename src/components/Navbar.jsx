@@ -3,12 +3,14 @@ import search_icon from '../assets/search_icon.svg';
 import close_icon from '../assets/close_icon.svg';
 import hamburger_icon from '../assets/hamburger_icon.svg';
 import { useState } from 'react';
+import { Outlet } from 'react-router-dom';
 
 const Navbar = () => {
 
   const [showMenu, setShowMenu] = useState(() => false)
 
   return (
+    <>
     <div className='navbar_container'>
         <div className='navbar_title_container'>
             <p className='navbar_title'>ELINEKART</p>
@@ -25,6 +27,8 @@ const Navbar = () => {
             <a className='navbar_links' href='#'>REGISTER</a>
         </div>
     </div>
+    <Outlet />
+    </>
   )
 }
 export default Navbar
