@@ -1,64 +1,64 @@
-.login_container {
+.login_and_register_container {
     display: flex;
     max-height: 90vh;
     align-items: center;
 }
 
-.login_left_side {
+.login_and_register_left_side {
     width: 50%;
 }
 
-.login_img {
+.login_and_register_img {
     height: 100%;
     width: 100%;
     object-fit: cover;
     max-height: 90vh;
 }
 
-.login_right_side,
-.login_form {
+.login_and_register_right_side,
+.login_and_register_form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.login_right_side {
+.login_and_register_right_side {
     justify-content: center;
     flex: 1;
 }
 
-.login_form {
+.login_and_register_form {
     width: 80%;
     margin-top: 32px;
     gap: 28px;
 }
 
-.login_right_side h1 {
+.login_and_register_right_side h1 {
     color: #A28140;
     font-family: var(--second-family);
     font-size: 82px;
     margin-bottom: -20px !important;
 }
 
-.login_right_side h2 {
+.login_and_register_right_side h2 {
     color: #FFF;
     font-family: var(--font-family);
     font-size: 30px;
     line-height: normal;
 }
 
-.login_right_side h1,
-.login_right_side h2 {
+.login_and_register_right_side h1,
+.login_and_register_right_side h2 {
     font-weight: 400;
     margin: 0px;
 }
 
-.login_form div {
+.login_and_register_form div {
     display: flex;
     width: 100%;
 }
 
-.login_form input {
+.login_and_register_form input {
     padding: 23px 33px 23px 10px;
     color: #333;
     font-family: var(--font-family);
@@ -71,14 +71,14 @@
     flex: 1;
 }
 
-.login_form img {
+.login_and_register_form img {
     padding: 23px 0px 23px 33px;
     background-color: white;
     border-top-left-radius: 100px;
     border-bottom-left-radius: 100px;
 }
 
-.login_form button {
+.login_and_register_form button {
     border-radius: 100px;
     background: #A28140;
     color: #FFF;
@@ -91,131 +91,131 @@
     transition: opacity 0.3s;
 }
 
-.login_form button:hover {
+.login_and_register_form button:hover {
     opacity: 0.8;
 }
 
-.login_form button:active {
+.login_and_register_form button:active {
     opacity: 0.7;
 }
 
-.login_right_side p {
+.login_and_register_right_side p {
     color: #fff;
     font-size: 18px;
     font-family: var(--font-family);
     font-weight: 400;
 }
 
-.login_right_side a {
+.login_and_register_right_side a {
     color: #fff;
 }
 
 @media (max-width: 1188px) and (min-width: 743px) {
-    .login_form input {
+    .login_and_register_form input {
         padding: 15px 20px 15px 10px;
         font-size: 24px;
     }
 
-    .login_form img {
+    .login_and_register_form img {
         padding: 15px 0px 15px 20px;
     }
 
-    .login_form button {
+    .login_and_register_form button {
         font-size: 32px;
         padding: 5px 24px;
     }
 }
 
 @media (max-width: 959px) and (min-width: 743px) {
-    .login_form input {
+    .login_and_register_form input {
         padding: 10px 15px 10px 10px;
         font-size: 18px;
     }
 
-    .login_form img {
+    .login_and_register_form img {
         padding: 10px 0px 10px 15px;
     }
 
-    .login_form button {
+    .login_and_register_form button {
         font-size: 28px;
         padding: 4px 20px;
     }
 
-    .login_form img {
+    .login_and_register_form img {
         padding: 10px 0px 10px 15px;
         height: 27px;
     }
 }
 
 @media (max-width: 878px) and (min-width: 743px) {
-    .login_right_side h1 {
+    .login_and_register_right_side h1 {
         font-size: 64px;
     }
-    .login_form img {
+    .login_and_register_form img {
         height: 28px;
     }
 }
 
 @media (max-width: 743px) {
-    .login_container {
+    .login_and_register_container {
         flex-direction: column-reverse;
         max-height: fit-content;
         gap: 35px;
     }
-    .login_right_side {
+    .login_and_register_right_side {
         width: 100%;
     }
-    .login_left_side{
+    .login_and_register_left_side{
         width: 85%;
     }
-    .login_img {
+    .login_and_register_img {
         max-height: fit-content;
         width: 100%;
     }
 }
 
 @media (max-width: 597px) {
-    .login_form input {
+    .login_and_register_form input {
         padding: 15px 20px 15px 10px;
         font-size: 24px;
     }
 
-    .login_form img {
+    .login_and_register_form img {
         padding: 15px 0px 15px 20px;
     }
 
-    .login_form button {
+    .login_and_register_form button {
         font-size: 32px;
         padding: 5px 24px;
     }
 }
 
 @media (max-width: 494px) {
-    .login_form input {
+    .login_and_register_form input {
         padding: 15px 20px 15px 10px;
         font-size: 24px;
     }
 
-    .login_form input {
+    .login_and_register_form input {
         padding: 10px 15px 10px 10px;
         font-size: 18px;
     }
 
-    .login_form img {
+    .login_and_register_form img {
         padding: 10px 0px 10px 15px;
     }
 
-    .login_form button {
+    .login_and_register_form button {
         font-size: 28px;
         padding: 4px 20px;
     }
 
-    .login_form img {
+    .login_and_register_form img {
         padding: 10px 0px 10px 15px;
         height: 27px;
     }
 
-    .login_right_side h1 {
+    .login_and_register_right_side h1 {
         font-size: 64px;
     }
 }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './SignIn.css';
+import './SignInAndRegister.css';
 import email_icon from '../assets/email_icon.svg'
 import password_icon from '../assets/password_icon.svg'
 import login_img from '../assets/login_img.png'
@@ -20,14 +20,14 @@ const SignIn = () => {
   }
 
   return (
-    <main className="login_container">
-        <div className="login_left_side">
-            <img src={login_img} alt="Login visual" className="login_img" />
+    <main className="login_and_register_container">
+        <div className="login_and_register_left_side">
+            <img src={login_img} alt="Login visual" className="login_and_register_img" />
         </div>
-        <div className="login_right_side">
+        <div className="login_and_register_right_side">
             <h1>HELLO AGAIN</h1>
             <h2>WELCOME BACK</h2>
-            <form className="login_form">
+            <form className="login_and_register_form">
                 <div>
                     <img src={email_icon} alt="" />
                     <input 
