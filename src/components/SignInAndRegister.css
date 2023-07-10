@@ -219,3 +219,9 @@
         font-size: 64px;
     }
 }
+
+@media (max-height: 721px) {
+    .login_and_register_container {
+        max-height: fit-content;
+    }
+}

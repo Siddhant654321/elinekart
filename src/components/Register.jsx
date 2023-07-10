@@ -2,13 +2,15 @@ import React, { useState } from 'react';
 import './SignInAndRegister.css';
 import email_icon from '../assets/email_icon.svg'
 import password_icon from '../assets/password_icon.svg'
-import login_img from '../assets/login_img.png'
+import name_icon from '../assets/name_icon.svg'
+import register_img from '../assets/register_img.png'
 import { Link } from 'react-router-dom';
 
-const SignIn = () => {
+const Register = () => {
   const [formValues, setFormValues] = useState({
     email: '',
-    password: ''
+    password: '',
+    name: ''
   });
 
   const handleInputChange = (event) => {
@@ -22,12 +24,22 @@ const SignIn = () => {
   return (
     <main className="login_and_register_container">
         <div className="login_and_register_left_side">
-            <img src={login_img} alt="Login visual" className="login_and_register_img" />
+            <img src={register_img} alt="Register visual" className="login_and_register_img" />
         </div>
         <div className="login_and_register_right_side">
-            <h1>HELLO AGAIN!</h1>
-            <h2>WELCOME BACK</h2>
+            <h1>HELLO!</h1>
+            <h2>Sign Up to Get Started</h2>
             <form className="login_and_register_form">
+                <div>
+                    <img src={name_icon} alt="" />
+                    <input 
+                      placeholder="Full Name" 
+                      type="text" 
+                      name="name" 
+                      value={formValues.name} 
+                      onChange={handleInputChange} 
+                    />
+                </div>
                 <div>
                     <img src={email_icon} alt="" />
                     <input 
@@ -49,12 +61,12 @@ const SignIn = () => {
                     />
                 </div>
                 <div>
-                    <button>LOGIN</button>
+                    <button>REGISTER</button>
                 </div>
             </form>
-            <p>New Customer? <Link to="/register">Register</Link></p>
+            <p>Already have an account? <Link to="/signin">Login</Link></p>
         </div>
     </main>
   )
 }
-export default SignIn
+export default Register

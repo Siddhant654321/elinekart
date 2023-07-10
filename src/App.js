@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Homepage from "./components/Homepage";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import SignIn from "./components/SignIn";
+import Register from "./components/Register";
 
 const Layout = ({ children }) => (
   <>
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Homepage /> },
       { path: '/signin', element: <SignIn /> },
+      { path: '/register', element: <Register /> },
     ]
   }
 ]);
