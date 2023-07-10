@@ -1,8 +1,12 @@
 import express from "express";
 import "dotenv/config";
 import cookieParser from "cookie-parser";
+import connectDB from "./config/db.js";
+
 
 const port = process.env.PORT || 3500;
+
+connectDB(); // Connect to MongoDB
 
 const app = express();
 
