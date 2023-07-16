@@ -1,9 +1,19 @@
 import full_star from '../assets/full_star.svg'
 import half_star from '../assets/half_star.svg'
 import empty_star from '../assets/empty_star.svg'
+import { BASE_URL } from '../constants'
 
-const ProductTab = ({ img, title, price, rating }) => {
-    const stars = [];
+const ProductTab = ({ product }) => {
+
+  const { 
+    name, 
+    image, 
+    rating, 
+    numReviews, 
+    price 
+  } = product
+
+  const stars = [];
   
     const fullStars = Math.floor(rating);
     for (let i = 0; i < fullStars; i++) {
@@ -23,13 +33,13 @@ const ProductTab = ({ img, title, price, rating }) => {
   
   return (
     <div className="product_tab">
-      <img className="product_img" src={img} alt={title} />
+      <img className="product_img" src={`${BASE_URL}${image}`} alt={name} />
       <div className='product_tab_flex'>
-        <h3 className="product_title">{title}</h3>
+        <h3 className="product_title">{name}</h3>
         <button className='add_to_cart_btn'>+</button>
       </div>
       <div className='star_rating'>
-        {stars}
+        {stars} {numReviews}
       </div>
       <h3 className="product_price">{price}</h3>
     </div>
