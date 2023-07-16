@@ -8,13 +8,22 @@ import productRoutes from "./routes/productRoutes.js";
 import orderRoutes from "./routes/orderRoutes.js";
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 import uploadRoutes from "./routes/uploadRoutes.js";
+import cors from 'cors';
 
+const corsOptions = {
+  origin: process.env.FRONTEND_URL, 
+  credentials: true
+};
 
 const port = process.env.PORT || 3500;
 
 connectDB(); // Connect to MongoDB
 
 const app = express();
+
+
+app.options('*', cors(corsOptions));
+app.use(cors(corsOptions))
 
 // Body parser middleware
 app.use(express.json());
