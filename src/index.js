@@ -6,6 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from "react-redux";
 import store from "./store";
 import { HelmetProvider } from "react-helmet-async";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from 'react-toastify';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,6 +15,7 @@ root.render(
     <HelmetProvider>
       <Provider store={store}>
         <App />
+        <ToastContainer />
       </Provider>
     </HelmetProvider> 
   </React.StrictMode>
