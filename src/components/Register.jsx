@@ -1,17 +1,49 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from "react";
 import './SignInAndRegister.css';
 import email_icon from '../assets/email_icon.svg'
 import password_icon from '../assets/password_icon.svg'
 import name_icon from '../assets/name_icon.svg'
 import register_img from '../assets/register_img.png'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useRegisterMutation } from "../slices/usersApiSlice";
+import { setCredentials } from "../slices/authSlice";
+import { toast } from "react-toastify";
 
 const Register = () => {
   const [formValues, setFormValues] = useState({
     email: '',
     password: '',
-    name: ''
+    name: '',
   });
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const [register, { isLoading }] = useRegisterMutation();
+
+  const userInfo = useSelector((state) => state.auth?.userInfo);
+
+  const { search } = useLocation();
+  const sp = new URLSearchParams(search);
+  const redirect = sp.get("redirect") || "/";
+
+  useEffect(() => {
+    if (userInfo) {
+      navigate(redirect);
+    }
+  }, [userInfo, redirect, navigate]);
+
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await register({ name: formValues.name, email: formValues.email, password: formValues.password }).unwrap();
+      dispatch(setCredentials({ ...res }));
+      navigate(redirect);
+    } catch (err) {
+      toast.error(err?.data?.message || err.error);
+    }
+  };
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -29,7 +61,7 @@ const Register = () => {
         <div className="login_and_register_right_side">
             <h1>HELLO!</h1>
             <h2>Sign Up to Get Started</h2>
-            <form className="login_and_register_form">
+            <form className="login_and_register_form" onSubmit={submitHandler}>
                 <div>
                     <img src={name_icon} alt="" />
                     <input 
@@ -61,7 +93,7 @@ const Register = () => {
                     />
                 </div>
                 <div>
-                    <button>REGISTER</button>
+                    <button type="submit" disabled={isLoading}>{isLoading ? 'Loading...' : 'REGISTER'}</button>
                 </div>
             </form>
             <p>Already have an account? <Link to="/signin">Login</Link></p>
