@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useLoginMutation } from "../slices/usersApiSlice";
 import { setCredentials } from "../slices/authSlice";
 import { toast } from "react-toastify";
+import validator from 'email-validator';
 
 const SignIn = () => {
   
@@ -35,13 +36,21 @@ const SignIn = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    try {
-      const res = await login({ email: formValues.email, password: formValues.password }).unwrap();
-      dispatch(setCredentials({ ...res }));
-      navigate(redirect);
-    } catch (err) {
-      console.log(err)
-      toast.error(err?.data?.message || err.error);
+    if (!validator.validate(formValues.email)) {
+      toast.error("Please enter a valid email address");
+      return;
+    } else if (formValues.password.length < 6){
+      toast.error("Password should be at least 6 characters long");
+      return;
+    } else {
+      try {
+        const res = await login({ email: formValues.email, password: formValues.password }).unwrap();
+        dispatch(setCredentials({ ...res }));
+        navigate(redirect);
+      } catch (err) {
+        console.log(err)
+        toast.error(err?.data?.message || err.error);
+      }
     }
   };
 
