@@ -1,4 +1,5 @@
 import { useGetProductsQuery } from '../slices/productsApiSlice';
+import Loader from './Loader';
 import ProductTab from './ProductTab';
 import './Products.css';
 
@@ -7,7 +8,7 @@ const Products = () => {
   const { data, isLoading, error } = useGetProductsQuery({});
 
   if(isLoading) {
-    return <p>Loading...</p>
+    return <Loader />
   }
 
   return (
