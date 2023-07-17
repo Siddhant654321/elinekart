@@ -80,12 +80,18 @@
     letter-spacing: 0.1px;
 }
 
-.product_price {
+.product_price,
+.star_rating p {
     color: #FBFBFB;
     font-family: var(--font-family);
     font-size: 17px;
     font-weight: 700;
     margin: 0px;
+}
+
+.star_rating p {
+    font-family: var(--third-family);
+    margin: 0px 8px;
 }
 
 .star_rating {

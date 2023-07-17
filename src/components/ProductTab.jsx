@@ -39,7 +39,7 @@ const ProductTab = ({ product }) => {
         <button className='add_to_cart_btn'>+</button>
       </div>
       <div className='star_rating'>
-        {stars} {numReviews}
+        {stars} <p>{numReviews}</p>
       </div>
       <h3 className="product_price">{price}</h3>
     </div>
