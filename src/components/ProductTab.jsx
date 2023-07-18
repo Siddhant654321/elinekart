@@ -2,6 +2,7 @@ import full_star from '../assets/full_star.svg'
 import half_star from '../assets/half_star.svg'
 import empty_star from '../assets/empty_star.svg'
 import { BASE_URL } from '../constants'
+import { useNavigate } from 'react-router-dom'
 
 const ProductTab = ({ product }) => {
 
@@ -10,8 +11,11 @@ const ProductTab = ({ product }) => {
     image, 
     rating, 
     numReviews, 
-    price 
+    price,
+    _id
   } = product
+
+  const navigation = useNavigate();
 
   const stars = [];
   
@@ -32,7 +36,7 @@ const ProductTab = ({ product }) => {
   
   
   return (
-    <div className="product_tab">
+    <div className="product_tab" onClick={() => navigation(`product/${_id}`)}>
       <img className="product_img" src={`${BASE_URL}${image}`} alt={name} />
       <div className='product_tab_flex'>
         <h3 className="product_title">{name}</h3>
