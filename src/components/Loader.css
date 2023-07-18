@@ -23,3 +23,7 @@
     background-position: left;
   }
 }
+
+.center_aligned_loader {
+	margin-top: 30vh;
+}

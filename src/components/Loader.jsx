@@ -1,7 +1,7 @@
 import "./Loader.css";
-const Loader = () => {
+const Loader = ({className}) => {
   return (
-    <div class="loader"></div>
+    <div className={`${className} loader`}></div>
   );
 };
 export default Loader;

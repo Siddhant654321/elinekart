@@ -1,0 +1,118 @@
+.product_page_container {
+    padding: 56px;
+}
+
+.product_details_container {
+    display: flex;
+    gap: 65px;
+    align-items: center;
+}
+
+.product_image_container {
+    display: flex;
+    width: 50%;
+    object-fit: cover;
+}
+
+.product_image_container img {
+    border-radius: 10px;
+    width: 100%;
+    height: 614px;
+    object-fit: cover;
+}
+
+.product_right_side_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 34px;
+    width: 50%;
+}
+
+.product_right_side_container h1 {
+    color: #A28140;
+    font-family: var(--second-family);
+    font-size: 48px;
+    letter-spacing: 0.1px;
+}
+
+.product_right_side_container p {
+    color: #F8F8F8;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: var(--font-family);
+    line-height: 156%;
+}
+
+.product_right_side_container h1,
+.product_right_side_container p {
+    font-weight: 400;
+    line-height: 24px; 
+    margin: 0px;
+}
+
+.product_page_rating_container {
+    display: flex;
+    gap: 15px;
+    align-self: flex-start;
+}
+
+.product_page_rating_container p {
+    color: #FBFBFB;
+    font-family: var(--font-family);
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+}
+
+.product_page_price {
+    align-self: flex-start;
+    font-size: 32px;
+    margin: 0px;
+}
+
+.product_page_quantity_selector {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    align-self: flex-start;
+}
+
+.product_page_quantity_selector img {
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.product_page_quantity_selector img:hover,
+.product_page_add_to_cart:hover {
+    opacity: 0.8;
+}
+
+.product_page_quantity_selector img:hover,
+.product_page_add_to_cart:hover {
+    opacity: 0.7;
+}
+
+.product_page_quantity_selector p {
+    color: #FBFBFB;
+    font-family: var(--font-family);
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 20px; 
+    letter-spacing: 0.2px;
+}
+
+.product_page_add_to_cart {
+    color: #FFF;
+    font-family: var(--second-family);
+    font-size: 41px;
+    font-weight: 400;
+    transition: opacity 0.3s;
+    width: 100%;
+    border: none;
+    border-radius: 50px;
+    background: #A28140;
+    cursor: pointer;
+    padding: 7px 0px;
+    margin-top: 37px;
+}
