@@ -34,7 +34,8 @@
     font-family: var(--second-family);
     font-size: 48px;
     letter-spacing: 0.1px;
-    line-height: 24px; 
+    line-height: 120%; 
+    text-align: center;
 }
 
 .product_right_side_container p {
@@ -97,7 +98,7 @@
 .product_page_quantity_selector p {
     color: #FBFBFB;
     font-family: var(--font-family);
-    font-size: 32px;
+    font-size: 26px !important;
     font-weight: 700;
     line-height: 20px; 
     letter-spacing: 0.2px;
@@ -144,4 +145,90 @@
     justify-content: space-evenly;
     flex-wrap: wrap;
     gap: 40px;
+}
+
+@media (max-width: 1200px) and (min-width: 798px) {
+    .product_right_side_container p {
+        font-size: 18px;
+    }
+    .product_image_container img {
+        height: 500px;
+    }
+}
+
+@media (max-width: 1000px) and (min-width: 798px) {
+    .product_page_add_to_cart{ 
+        font-size: 28px;
+        margin-top: 10px;
+    }
+    .product_right_side_container p {
+        font-size: 16px;
+    }
+    .product_right_side_container h1 {
+        font-size: 32px;
+    }
+    .product_right_side_container {
+        gap: 20px;
+    }
+    .product_image_container img {
+        height: fit-content;
+    }
+}
+
+@media (max-width: 798px) {
+    .product_details_container {
+        flex-direction: column;
+    }
+    .product_image_container img {
+        height: 100%;
+    }
+    .product_right_side_container {
+        width: 100%;
+    }
+    .product_image_container {
+        width: 100%;
+    }
+}
+
+@media (max-width: 655px) {
+    .product_right_side_container p {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 553px) {
+    .product_page_add_to_cart {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .product_right_side_container {
+        gap: 20px;
+    }
+    .product_right_side_container h1 {
+        font-size: 38px;
+    }
+    .product_page_container {
+        padding: 30px;
+    }
+    .product_page_quantity_selector p {
+        font-size: 18px !important;
+    }
+    .product_page_quantity_selector img {
+        height: 24px;
+        width: 24px;
+    }
+    .product_page_add_to_cart {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .product_right_side_container p {
+        font-size: 16px;
+    }
+    .product_page_price {
+        font-size: 24px;
+    }
 }
