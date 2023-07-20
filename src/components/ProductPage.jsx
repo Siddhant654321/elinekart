@@ -13,6 +13,7 @@ import empty_star from "../assets/empty_star.svg";
 import quantity_decrease from "../assets/quantity_decrease.svg";
 import quantity_increase from "../assets/quantity_increase.svg";
 import { BASE_URL } from '../constants';
+import ReviewTab from './ReviewTab';
 
 const ProductPage = () => {
 
@@ -91,6 +92,11 @@ const ProductPage = () => {
           <h1>
             Reviews
           </h1>
+          <div className='reviews_container'>
+            {product.reviews.map((review) => {
+              return <ReviewTab key={review.createdAt} comment={review.comment} name={review.name} rating={review.rating} createdAt={review.createdAt} />
+            })}
+          </div>
         </section>
       </main>
     </div>

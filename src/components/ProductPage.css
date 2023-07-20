@@ -138,3 +138,8 @@
     letter-spacing: 0.1px;
     margin-bottom: 85px;
 }
+
+.reviews_container {
+    display: flex;
+    justify-content: space-between;
+}

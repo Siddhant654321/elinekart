@@ -1,0 +1,28 @@
+.review_tab {
+    border-radius: 22px;
+    border: 6px solid #A28140;
+    background: #FFF;
+    padding: 63px 35px;
+    max-width: 345px;
+}
+
+.review_tab p {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 37px;
+}
+
+.review_tab p,
+.review_tab h3 {
+    color: #121618;
+    font-family: var(--font-family);
+    letter-spacing: 0.1px;
+}
+
+.review_tab h3 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: center;
+    margin: 47px 0px 16px 0px;
+}
