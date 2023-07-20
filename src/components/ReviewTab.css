@@ -17,12 +17,12 @@
     color: #121618;
     font-family: var(--font-family);
     letter-spacing: 0.1px;
+    text-align: center;
 }
 
 .review_tab h3 {
     font-size: 32px;
     font-weight: 700;
     line-height: 24px;
-    text-align: center;
     margin: 47px 0px 16px 0px;
 }

@@ -7,13 +7,11 @@ import {
   useGetProductDetailsQuery,
 } from "../slices/productsApiSlice";
 import { addToCart } from "../slices/cartSlice";
-import full_star from "../assets/full_star.svg";
-import half_star from "../assets/half_star.svg";
-import empty_star from "../assets/empty_star.svg";
 import quantity_decrease from "../assets/quantity_decrease.svg";
 import quantity_increase from "../assets/quantity_increase.svg";
 import { BASE_URL } from '../constants';
 import ReviewTab from './ReviewTab';
+import getStars from '../utils/getStars';
 
 const ProductPage = () => {
 
@@ -45,22 +43,7 @@ const ProductPage = () => {
     navigate('/')
   }
 
-  const stars = [];
-
-  const fullStars = Math.floor(product?.rating);
-  for (let i = 0; i < fullStars; i++) {
-    stars.push(<img src={full_star} alt="full star" />);
-  }
-
-  const halfStar = product?.rating % 1 !== 0;
-  if (halfStar) {
-    stars.push(<img src={half_star} alt="half star" />);
-  }
-
-  const emptyStars = 5 - stars.length;
-  for (let i = 0; i < emptyStars; i++) {
-    stars.push(<img src={empty_star} alt="empty star" />);
-  }
+  const stars = getStars(product?.rating)
 
   return (
     <div>

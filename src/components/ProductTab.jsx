@@ -1,8 +1,6 @@
-import full_star from '../assets/full_star.svg'
-import half_star from '../assets/half_star.svg'
-import empty_star from '../assets/empty_star.svg'
 import { BASE_URL } from '../constants'
 import { useNavigate } from 'react-router-dom'
+import getStars from '../utils/getStars'
 
 const ProductTab = ({ product }) => {
 
@@ -17,22 +15,7 @@ const ProductTab = ({ product }) => {
 
   const navigation = useNavigate();
 
-  const stars = [];
-  
-    const fullStars = Math.floor(rating);
-    for (let i = 0; i < fullStars; i++) {
-      stars.push(<img src={full_star} alt="full star" />);
-    }
-  
-    const halfStar = (rating % 1) !== 0;
-    if (halfStar) {
-      stars.push(<img src={half_star} alt="half star" />);
-    }
-    
-    const emptyStars = 5 - stars.length;  
-    for (let i = 0; i < emptyStars; i++) {
-      stars.push(<img src={empty_star} alt="empty star" />);
-    }
+  const stars = getStars(rating);
   
   
   return (
