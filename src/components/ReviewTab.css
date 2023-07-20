@@ -2,15 +2,25 @@
     border-radius: 22px;
     border: 6px solid #A28140;
     background: #FFF;
-    padding: 63px 35px;
-    max-width: 345px;
+    height: 374px;
+    width: 415px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     box-shadow: 4px 4px 79.3px -22px #000;
+}
+
+.review_comment {
+    height: 148px;
 }
 
 .review_tab p {
     font-size: 24px;
     font-weight: 500;
     line-height: 37px;
+    margin: 0px;
+    padding: 0px 35px;
 }
 
 .review_tab p,
@@ -32,4 +42,5 @@
     display: flex;
     gap: 8px;
     justify-content: center;
+    margin-bottom: 8px;
 }
