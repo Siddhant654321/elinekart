@@ -87,6 +87,11 @@ const ProductPage = () => {
             <button className="product_page_add_to_cart" disabled={product.countInStock === 0} onClick={addToCartHandler}>ADD TO CART</button>
           </div>
         </section>
+        <section className='product_page_reviews_section'>
+          <h1>
+            Reviews
+          </h1>
+        </section>
       </main>
     </div>
   );

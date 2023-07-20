@@ -115,6 +115,7 @@
     background: #A28140;
     cursor: pointer;
     padding: 7px 0px;
+    margin-top: 20px;
 }
 
 .out_of_stock_text {
@@ -122,4 +123,18 @@
     font-family: var(--font-family);
     align-self: flex-start;
     font-size: 18px !important;
+}
+
+.product_page_reviews_section {
+    margin-top: 100px;
+}
+
+.product_page_reviews_section h1 {
+    color: #A28140;
+    font-family: var(--second-family);
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+    margin-bottom: 85px;
 }
