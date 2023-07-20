@@ -26,7 +26,6 @@
     background: #121618;
     box-shadow: 4px 4px 58.8px -11px #000, 0px 4px 4px 0px #000;
     margin-bottom: 60px;
-    cursor: pointer;
 }
 
 .product_tab_flex {
@@ -69,6 +68,7 @@
     border-radius: 10px;
     width: 100%;
     height: 242px;
+    cursor: pointer;
     object-fit: cover;
 }
 
@@ -78,6 +78,7 @@
     font-size: 16px;
     font-weight: 700;
     line-height: 24px;
+    cursor: pointer;
     letter-spacing: 0.1px;
 }
 
