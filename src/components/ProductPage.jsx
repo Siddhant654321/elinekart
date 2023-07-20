@@ -78,12 +78,13 @@ const ProductPage = () => {
               <p>{product?.numReviews}</p>
             </div>
             <h3 className="product_price product_page_price">$38.00</h3>
+            {product.countInStock === 0 ? <p className='out_of_stock_text'>This product is out of stock!</p> :
             <div className="product_page_quantity_selector">
-                <img alt="Quantity Decrease" src={quantity_decrease} onClick={() => setQty(prev => prev+1)}/>
+                <img alt="Quantity Decrease" src={quantity_decrease} style={{opacity: qty === 1 ? '0.4' : '1' }} onClick={() => qty !== 1 && setQty(prev => prev-1)}/>
                 <p>{qty}</p>
-                <img alt="Quantity Increase" src={quantity_increase} onClick={() => setQty(prev => prev-1)}/>
-            </div>
-            <button className="product_page_add_to_cart">ADD TO CART</button>
+                <img alt="Quantity Increase" src={quantity_increase} style={{opacity: product.countInStock === qty ? '0.4' : '1' }} onClick={() => product.countInStock !== qty && setQty(prev => prev+1)}/>
+            </div>}
+            <button className="product_page_add_to_cart" disabled={product.countInStock === 0} onClick={addToCartHandler}>ADD TO CART</button>
           </div>
         </section>
       </main>
