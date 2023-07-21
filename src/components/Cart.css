@@ -1,0 +1,24 @@
+.cart_page {
+    padding: 0px 65px;
+    max-width: 100%;
+}
+
+.cart_headers {
+    border-radius: 22px;
+    background: #181C1E;
+    padding: 38px 47px;
+    display: flex;
+    gap: 49px;
+}
+
+.cart_headers li {
+    color: #A28140;
+    font-family: var(--second-family);
+    font-size: 48px;
+    font-weight: 400;
+    list-style: none;
+}
+
+.cart_headers li:first-child {
+    flex: 1;
+}
