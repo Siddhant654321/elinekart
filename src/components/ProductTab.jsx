@@ -36,7 +36,7 @@ const ProductTab = ({ product }) => {
       <div className='star_rating'>
         {stars} <p>{numReviews}</p>
       </div>
-      <h3 className="product_price">{price}</h3>
+      <h3 className="product_price">${price}</h3>
     </div>
   )
 }

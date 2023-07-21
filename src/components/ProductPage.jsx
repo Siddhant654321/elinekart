@@ -61,7 +61,7 @@ const ProductPage = () => {
               <div className="star_rating">{stars}</div>
               <p>{product?.numReviews}</p>
             </div>
-            <h3 className="product_price product_page_price">$38.00</h3>
+            <h3 className="product_price product_page_price">${product.price}</h3>
             {product.countInStock === 0 ? <p className='out_of_stock_text'>This product is out of stock!</p> :
             <div className="product_page_quantity_selector">
                 <img alt="Quantity Decrease" src={quantity_decrease} style={{opacity: qty === 1 ? '0.4' : '1' }} onClick={() => qty !== 1 && setQty(prev => prev-1)}/>
