@@ -124,3 +124,26 @@
 .checkout_btn:active {
     opacity: 0.7;
 }
+
+.remove_btn {
+    cursor: pointer;
+}
+
+.remove_btn:hover {
+    filter: invert(35%) sepia(56%) saturate(7453%) hue-rotate(348deg) brightness(86%) contrast(142%);;
+}
+
+.remove_btn:active {
+    opacity: 0.8;
+}
+
+.cart_page_quantity_selector {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.cart_page_quantity_selector img {
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
