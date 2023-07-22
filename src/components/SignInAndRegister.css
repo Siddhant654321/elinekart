@@ -1,6 +1,6 @@
 .login_and_register_container {
     display: flex;
-    max-height: 90vh;
+    max-height: 80vh;
     align-items: center;
 }
 
@@ -12,7 +12,7 @@
     height: 100%;
     width: 100%;
     object-fit: cover;
-    max-height: 90vh;
+    max-height: 80vh;
 }
 
 .login_and_register_right_side,
@@ -36,7 +36,7 @@
 .login_and_register_right_side h1 {
     color: #A28140;
     font-family: var(--second-family);
-    font-size: 82px;
+    font-size: 64px;
     margin-bottom: -20px !important;
 }
 
@@ -59,10 +59,10 @@
 }
 
 .login_and_register_form input {
-    padding: 23px 33px 23px 10px;
+    padding: 17px 25px 17px 10px;
     color: #333;
     font-family: var(--font-family);
-    font-size: 30px;
+    font-size: 24px;
     font-weight: 400;
     border-top-right-radius: 100px;
     border-bottom-right-radius: 100px;
@@ -72,7 +72,7 @@
 }
 
 .login_and_register_form img {
-    padding: 23px 0px 23px 33px;
+    padding: 17px 0px 17px 25px;
     background-color: white;
     border-top-left-radius: 100px;
     border-bottom-left-radius: 100px;
@@ -83,10 +83,10 @@
     background: #A28140;
     color: #FFF;
     font-family: var(--second-family);
-    font-size: 41px;
     border: none;
     flex: 1;
-    padding: 7px 33px;
+    font-size: 32px;
+    padding: 5px 24px;
     cursor: pointer;
     transition: opacity 0.3s;
 }
@@ -110,25 +110,9 @@
     color: #fff;
 }
 
-@media (max-width: 1188px) and (min-width: 743px) {
-    .login_and_register_form input {
-        padding: 15px 20px 15px 10px;
-        font-size: 24px;
-    }
-
-    .login_and_register_form img {
-        padding: 15px 0px 15px 20px;
-    }
-
-    .login_and_register_form button {
-        font-size: 32px;
-        padding: 5px 24px;
-    }
-}
-
 @media (max-width: 959px) and (min-width: 743px) {
     .login_and_register_form input {
-        padding: 10px 15px 10px 10px;
+        padding: 9px 15px 9px 10px;
         font-size: 18px;
     }
 
@@ -148,9 +132,6 @@
 }
 
 @media (max-width: 878px) and (min-width: 743px) {
-    .login_and_register_right_side h1 {
-        font-size: 64px;
-    }
     .login_and_register_form img {
         height: 28px;
     }
@@ -213,10 +194,6 @@
     .login_and_register_form img {
         padding: 10px 0px 10px 15px;
         height: 27px;
-    }
-
-    .login_and_register_right_side h1 {
-        font-size: 64px;
     }
 }
 

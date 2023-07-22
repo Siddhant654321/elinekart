@@ -62,7 +62,7 @@
 .cart_product_price,
 .cart_product_qty {
     font-family: var(--font-family);
-    font-size: 32px;
+    font-size: 24px;
     font-weight: 600;
     margin: 0px;
     letter-spacing: 0.2px;
