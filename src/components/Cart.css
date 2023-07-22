@@ -96,3 +96,31 @@
 .total_price {
     font-size: 32px !important;
 }
+
+.cart_bottom_section {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 25px;
+}
+
+.checkout_btn {
+    border-radius: 50px;
+    background: #A28140;
+    color: #FFF;
+    font-family: var(--second-family);
+    font-size: 38px;
+    font-weight: 400;
+    border: none;
+    padding: 5px 120px;
+    transition: opacity 0.3s;
+    cursor: pointer;
+    align-self: center;
+}
+
+.checkout_btn:hover {
+    opacity: 0.8;
+}
+
+.checkout_btn:active {
+    opacity: 0.7;
+}

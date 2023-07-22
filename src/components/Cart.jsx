@@ -31,7 +31,7 @@ const Cart = () => {
           </div>;
         })}
       </section>
-      <section>
+      <section className="cart_bottom_section">
         <ul className="cart_headers">
           <li>ORDER SUMMARY</li>
         </ul>
@@ -46,6 +46,7 @@ const Cart = () => {
           <p>TOTAL</p>
           <p className="total_price">${total}</p>
         </div>
+        <button className="checkout_btn">CHECKOUT</button>
       </section>
     </div>
   );
