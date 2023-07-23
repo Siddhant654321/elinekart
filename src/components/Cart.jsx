@@ -23,7 +23,7 @@ const Cart = () => {
   };
 
   const checkoutHandler = async () => {
-    navigate("/login?redirect=/shipping");
+    navigate("/signin?redirect=/shipping");
   };
 
   let total = 0;
