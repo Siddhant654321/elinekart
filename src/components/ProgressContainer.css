@@ -1,0 +1,49 @@
+.progress_container {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin: 50px auto;
+    position: relative;
+}
+
+.progress_container div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 108px;
+}
+
+.progress_container svg {
+    background-color: #f8f8f8;
+    border-radius: 50px;
+    padding: 12px;
+    color: #A28140;
+}
+
+.connecting_line {
+    position: absolute;
+    top: 28%;
+    left: 28%;
+    transform: translate(-28%, -28%);
+    width: 85%;
+    z-index: -999;
+    margin: 0px;
+}
+
+.progress_container p {
+    color: #F8F8F8;
+    font-family: var(--font-family);
+    font-size: 24px;
+    font-weight: 500;
+    margin: 20px 0px 0px;
+    letter-spacing: 0.1px;
+}
+
+.progress_container .active svg {
+    color: #121618;
+    background-color: #A28140;
+}
+
+.progress_container .active p {
+    color: #A28140;
+}
