@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { saveShippingAddress } from "../slices/cartSlice";
 import { useState } from 'react';
+import { toast } from 'react-toastify';
 
 const Shipping = () => {
   const shippingAddress = useSelector((state) => state?.cart?.shippingAddress);
@@ -18,11 +19,34 @@ const Shipping = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  const validateForm = () => {
+    if (address.length < 3) {
+      toast.error("Address needs to be atleast 3 characters long.");
+      return false;
+    }
+    if (city.length < 2) {
+      toast.error("City needs to be atleast 2 characters long.");
+      return false;
+    }
+    if (postalCode.length < 3 || isNaN(postalCode)) {
+      toast.error("Postal code must be at least 3 digits long and numeric.");
+      return false;
+    }
+    if (country.length < 2) {
+      toast.error("Country needs to be atleast 2 characters long.");
+      return false;
+    }
+    return true;
+  };
+
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(saveShippingAddress({ address, city, postalCode, country }));
-    navigate("/payment");
+    if (validateForm()) {
+      dispatch(saveShippingAddress({ address, city, postalCode, country }));
+      navigate("/payment");
+    }
   };
+
   return (
     <main>
       <ProgressContainer />
