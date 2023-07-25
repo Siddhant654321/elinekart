@@ -7,6 +7,7 @@ import Register from "./components/Register";
 import ProductPage from "./components/ProductPage";
 import Cart from "./components/Cart";
 import Shipping from "./components/Shipping";
+import Payment from "./components/Payment";
 
 const Layout = ({ children }) => (
   <>
@@ -26,7 +27,8 @@ const router = createBrowserRouter([
       { path: '/register', element: <Register /> },
       { path: '/product/:id', element: <ProductPage /> },
       { path: '/cart', element: <Cart /> },
-      { path: '/shipping', element: <Shipping />}
+      { path: '/shipping', element: <Shipping />},
+      { path: '/payment', element: <Payment />},
     ]
   }
 ]);
