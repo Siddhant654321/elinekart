@@ -7,7 +7,7 @@ const ProgressContainer = () => {
 
   return (
     <section>
-      <div className="progress_container">
+      <div className="progress_container" style={{ marginBottom: location.pathname === '/payment' && '0px' }}>
         <div className={location.pathname === '/shipping' && "active"}>
           <svg
             width="40"
