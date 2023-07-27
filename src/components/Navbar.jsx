@@ -66,7 +66,7 @@ const Navbar = () => {
           </Link>
           {userInfo ? (
             <>
-              <Link className="navbar_links" to="/signin">
+              <Link className="navbar_links" to="/profile">
                 PROFILE
               </Link>
               <div style={{ alignSelf: "center" }} onClick={logoutHandler}>

@@ -47,3 +47,44 @@
 .progress_container .active p {
     color: #A28140;
 }
+
+@media (max-width: 1112px) {
+    .progress_container {
+        width: 75%;
+    }
+}
+
+@media (max-width: 744px) {
+    .progress_container {
+        width: 75%;
+    }
+    .progress_container p {
+        font-size: 20px;
+    }
+    .progress_container svg {
+        width: 24px;
+        height: 24px;
+    }
+    .progress_container div {
+        width: 92px;
+    }
+    .connecting_line {
+        width: 81%;
+        left: 30%;
+        transform: translate(-28%, -30%);
+    }
+}
+
+@media (max-width: 500px)  {
+    .progress_container {
+        width: 95%;
+        margin: 25px auto 50px auto;
+    }
+    .progress_container p {
+        font-size: 16px;
+    }
+    .progress_container svg {
+        width: 18px;
+        height: 18px;
+    }
+}

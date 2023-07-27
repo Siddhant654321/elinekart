@@ -35,3 +35,24 @@
 .continue_btn:hover {
     opacity: 0.7;
 }
+
+@media (max-width: 950px) {
+    .shipping_form input {
+        font-size: 20px;
+    }
+    .shipping_form {
+        width: 400px;
+    }
+}
+
+@media (max-width: 550px) {
+    .shipping_form input {
+        font-size: 16px;
+    }
+    .shipping_form {
+        width: 85%;
+    }
+    .continue_btn {
+        font-size: 24px;
+    }
+}
