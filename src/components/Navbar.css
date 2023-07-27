@@ -29,11 +29,20 @@
     transition: all 0.3s;
 }
 
-.navbar_links:hover {
+.navbar_logout_icon {
+    height: 36px;
+    color: #f8f8f8;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.navbar_links:hover,
+.navbar_logout_icon:hover {
     color: #A28140;
 }
 
-.navbar_links:active {
+.navbar_links:active,
+.navbar_logout_icon:active {
     opacity: 0.8;
 }
 
@@ -86,6 +95,9 @@
     .navbar_links {
         font-size: 24px;
     }
+    .navbar_logout_icon {
+        height: 24px;
+    }
     .navbar_search_button {
         padding: 11px 29px 10px 0px;
     }
@@ -117,6 +129,9 @@
     }
     .navbar_links {
         font-size: 18px;
+    }
+    .navbar_logout_icon {
+        height: 18px;
     }
     .navbar_container {
         padding: 10px 32px;
