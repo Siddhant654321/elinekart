@@ -9,6 +9,7 @@ import Cart from "./components/Cart";
 import Shipping from "./components/Shipping";
 import Payment from "./components/Payment";
 import PlaceOrder from "./components/PlaceOrder";
+import PrivateRoute from "./components/PrivateRoute";
 
 const Layout = ({ children }) => (
   <>
@@ -28,9 +29,11 @@ const router = createBrowserRouter([
       { path: '/register', element: <Register /> },
       { path: '/product/:id', element: <ProductPage /> },
       { path: '/cart', element: <Cart /> },
-      { path: '/shipping', element: <Shipping />},
-      { path: '/payment', element: <Payment />},
-      { path: '/placeorder', element: <PlaceOrder />},
+      { path: '', element: <PrivateRoute />, children: [
+        { path: '/shipping', element: <Shipping />},
+        { path: '/payment', element: <Payment />},
+        { path: '/placeorder', element: <PlaceOrder />},
+      ]},
     ]
   }
 ]);
