@@ -9,10 +9,17 @@ import { toast } from "react-toastify";
 
 const PlaceOrder = () => {
   const navigate = useNavigate();
+  let total = 0;
 
   const cart = useSelector((state) => state?.cart);
 
   const [createOrder, { isLoading, error }] = useCreateOrderMutation();
+
+  useEffect(() => {
+    if(error) {
+      toast.error(error.data.message)
+    }
+  }, [error])
 
   useEffect(() => {
     if (!cart.shippingAddress.address) {
@@ -59,19 +66,57 @@ const PlaceOrder = () => {
             {cart.paymentMethod}
           </p>
           <h1>Order Items</h1>=
-            {cart.cartItems.length === 0 ? (
-                <p style={{color: 'red'}}>Your cart is empty</p>
-            ) : 
-              (
-                <div>
-                    {cart.cartItems.map((item, index) => <div className="place_order_items_container">
-                            <p>{item.name}</p>
-                            <p>{item.qty} &times; ${item.price} = <span className="place_order_left_side_bold">${item.qty*item.price}</span> </p>
-                        </div>
-                    )}
-                </div>
-            )}
+          {cart.cartItems.length === 0 ? (
+            <p style={{ color: "red" }}>Your cart is empty</p>
+          ) : (
+            <div>
+              {cart.cartItems.map((item, index) => {
+                total += item.price * item.qty;
+                return (
+                  <div className="place_order_items_container">
+                    <p>{item.name}</p>
+                    <p>
+                      {item.qty} &times; ${item.price} ={" "}
+                      <span className="place_order_left_side_bold">
+                        ${item.qty * item.price}
+                      </span>{" "}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+          )}
         </div>
+        {cart.cartItems.length !== 0 && (
+          <div className="place_order_right_side">
+            <h1>ORDER SUMMARY</h1>
+            <div className="place_order_right_items">
+              <p>Items</p>
+              <p>
+                <span className="place_order_right_side_bold">
+                  ${total}
+                </span>{" "}
+              </p>
+            </div>
+            <div className="place_order_right_items">
+              <p>Shipping</p>
+              <p>
+                <span className="place_order_right_side_bold">
+                  ${cart.shippingPrice}
+                </span>{" "}
+              </p>
+            </div>
+            <div className="place_order_right_items">
+              <p>Total</p>
+              <p>
+                <span className="place_order_right_side_bold">
+                  ${total}
+                </span>{" "}
+              </p>
+            </div>
+            <button className="checkout_btn place_order_btn" onClick={placeOrderHandler}>{isLoading ? 'Loading...' : 'PLACE ORDER'}</button>
+          </div>
+        )}
       </div>
     </main>
   );
