@@ -10,6 +10,7 @@ import Shipping from "./components/Shipping";
 import Payment from "./components/Payment";
 import PlaceOrder from "./components/PlaceOrder";
 import PrivateRoute from "./components/PrivateRoute";
+import Profile from "./components/Profile";
 
 const Layout = ({ children }) => (
   <>
@@ -33,6 +34,7 @@ const router = createBrowserRouter([
         { path: '/shipping', element: <Shipping />},
         { path: '/payment', element: <Payment />},
         { path: '/placeorder', element: <PlaceOrder />},
+        { path: '/profile', element: <Profile />},
       ]},
     ]
   }
