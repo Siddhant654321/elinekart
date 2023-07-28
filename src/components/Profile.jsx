@@ -11,6 +11,7 @@ import { setCredentials } from "../slices/authSlice";
 import Loader from "./Loader";
 import yes_icon from '../assets/yes_icon.svg';
 import no_icon from '../assets/no_icon.svg';
+import validator from 'email-validator';
 
 
 const Profile = () => {
@@ -39,6 +40,15 @@ const Profile = () => {
     e.preventDefault();
     if (password !== confirmPassword) {
       toast.error("Passwords do not match");
+    } else if (!validator.validate(email)) {
+      toast.error("Please enter a valid email address");
+      return;
+    } else if (password.length !== 0 && password.length < 6){
+      toast.error("Password should be at least 6 characters long");
+      return;
+    } else if (name.length <= 2){
+      toast.error("Name should be at least 3 characters long");
+      return;
     } else {
       try {
         const res = await updateProfile({
