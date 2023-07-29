@@ -2,6 +2,7 @@
     display: flex;
     padding: 0px 65px 40px 65px;
     gap: 80px;
+    flex-wrap: wrap;
 }
 
 .profile_container h1 {
@@ -13,7 +14,7 @@
 }
 
 .user_profile_form {
-    width: 500px;
+    width: 400px;
 }
 
 .user_profile_form div {
@@ -99,4 +100,74 @@
     font-size: 32px;
     font-weight: 400;
     margin: 0px 0px 12px 0px;
+}
+
+@media (max-width: 1382px) {
+    .profile_container {
+        justify-content: center;
+    }
+    .profile_container h1 {
+        text-align: center;
+    }
+    .user_profile_form {
+        width: 700px;
+        margin: auto;
+    }
+    .profile_left_side{
+        width: 100%;
+    }
+}
+
+@media (max-width: 893px) {
+    .profile_right_side {
+        width: 100%;
+    }
+    .order_item_details h5 {
+        font-size: 24px;
+    }
+    .order_item_details p {
+        font-size: 18px;
+    }
+    .order_item_details {
+        justify-content: space-between;
+    }
+    .user_profile_form {
+        width: 100%;
+    }
+    .order_item_details div {
+        min-width: fit-content;
+    }
+}
+
+@media (max-width: 698px) {
+    .order_item_container h1 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 538px) {
+    .profile_container {
+        padding: 0px 25px 40px 25px;
+    }
+    .user_profile_form input {
+        font-size: 18px;
+    }
+    .user_profile_form img {
+        height: 27px;
+    }
+    .order_item_details h5 {
+        font-size: 18px;
+    }
+    .order_item_details p {
+        font-size: 16px;
+    }
+    .order_item_details img {
+        height: 20px;
+    }
+} 
+
+@media (max-width: 413px) {
+    .order_item_details {
+        flex-direction: column;
+    }
 }
