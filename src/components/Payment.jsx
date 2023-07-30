@@ -6,11 +6,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { savePaymentMethod } from "../slices/cartSlice";
+import { toast } from "react-toastify";
+import { useCreateOrderMutation } from "../slices/ordersApiSlice";
 
 const Payment = () => {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const cart = useSelector((state) => state.cart);
+  const [createOrder, { isLoading, error }] = useCreateOrderMutation();
 
   const shippingAddress = useSelector((state) => state?.cart?.shippingAddress);
 
@@ -20,10 +25,23 @@ const Payment = () => {
     }
   }, [shippingAddress, navigate]);
 
-  const submitHandler = (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
     dispatch(savePaymentMethod("PayPal"));
-    navigate("/placeorder");
+    try {
+      const res = await createOrder({
+        orderItems: cart.cartItems,
+        shippingAddress: cart.shippingAddress,
+        paymentMethod: cart.paymentMethod,
+        itemsPrice: cart.itemsPrice,
+        shippingPrice: cart.shippingPrice,
+        taxPrice: cart.taxPrice,
+        totalPrice: cart.totalPrice,
+      }).unwrap();
+      navigate("/placeorder", { state: { orderId: res._id } });
+    } catch (err) {
+      toast.error(err);
+    }
   };
 
   return (
@@ -36,7 +54,7 @@ const Payment = () => {
           className="payment_animation"
         />
         <button className="continue_btn payment_page_btn" onClick={submitHandler}>
-          CONTINUE
+          {isLoading ? "LOADING..." : "CONTINUE"}
         </button>
       </div>
     </main>

@@ -1,25 +1,42 @@
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./PlaceOrder.css";
 import ProgressContainer from "./ProgressContainer";
 import { useDispatch, useSelector } from "react-redux";
-import { useCreateOrderMutation } from "../slices/ordersApiSlice";
+import {
+  useGetOrderDetailsQuery,
+  useGetPayPalClientIdQuery,
+  usePayOrderMutation,
+} from "../slices/ordersApiSlice";
 import { clearCartItems } from "../slices/cartSlice";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
+import Loader from "./Loader";
+import { PayPalButtons, usePayPalScriptReducer } from "@paypal/react-paypal-js";
 
 const PlaceOrder = () => {
+  const location = useLocation();
+  const { orderId } = location.state || {};
+
+  const {
+    data: order,
+    refetch,
+    isLoading,
+    isError,
+  } = useGetOrderDetailsQuery(orderId);
+
+  const [payOrder, { isLoading: loadingPay }] = usePayOrderMutation();
+  const [{ isPending }, paypalDispatch] = usePayPalScriptReducer();
+
   const navigate = useNavigate();
   let total = 0;
 
   const cart = useSelector((state) => state?.cart);
 
-  const [createOrder, { isLoading, error }] = useCreateOrderMutation();
-
-  useEffect(() => {
-    if(error) {
-      toast.error(error.data.message)
-    }
-  }, [error])
+  const {
+    data: paypal,
+    isLoading: loadingPayPal,
+    error: errorPayPal,
+  } = useGetPayPalClientIdQuery();
 
   useEffect(() => {
     if (!cart.shippingAddress.address) {
@@ -31,23 +48,63 @@ const PlaceOrder = () => {
 
   const dispatch = useDispatch();
 
-  const placeOrderHandler = async () => {
-    try {
-      const res = await createOrder({
-        orderItems: cart.cartItems,
-        shippingAddress: cart.shippingAddress,
-        paymentMethod: cart.paymentMethod,
-        itemsPrice: cart.itemsPrice,
-        shippingPrice: cart.shippingPrice,
-        taxPrice: cart.taxPrice,
-        totalPrice: cart.totalPrice,
-      }).unwrap();
-      dispatch(clearCartItems());
-      navigate(`/order/${res._id}`);
-    } catch (err) {
-      toast.error(err);
+  useEffect(() => {
+    if (!errorPayPal && !loadingPayPal && paypal.clientId) {
+      const loadPaypalScript = async () => {
+        paypalDispatch({
+          type: "resetOptions",
+          value: {
+            "client-id": paypal.clientId,
+            currency: "USD",
+          },
+        });
+        paypalDispatch({ type: "setLoadingStatus", value: "pending" });
+      };
+      if (order) {
+        if (!window.paypal) {
+          loadPaypalScript();
+        }
+      }
     }
-  };
+  }, [errorPayPal, loadingPayPal, order, paypal, paypalDispatch]);
+
+  function onApprove(data, actions) {
+    return actions.order.capture().then(async function (details) {
+      try {
+        await payOrder({ orderId, details });
+        refetch();
+        dispatch(clearCartItems());
+        toast.success("Order is paid");
+        navigate("/profile");
+      } catch (err) {
+        toast.error(err?.data?.message || err.error);
+      }
+    });
+  }
+
+  function onError(err) {
+    toast.error(err.message);
+  }
+
+  function createOrderPaypal(data, actions) {
+    return actions.order
+      .create({
+        purchase_units: [
+          {
+            amount: {
+              value: order.totalPrice,
+            },
+          },
+        ],
+      })
+      .then((orderId) => {
+        return orderId;
+      });
+  }
+
+  if (!order) {
+    return <Loader className="center_aligned_loader" />;
+  }
 
   return (
     <main>
@@ -93,9 +150,7 @@ const PlaceOrder = () => {
             <div className="place_order_right_items">
               <p>Items</p>
               <p>
-                <span className="place_order_right_side_bold">
-                  ${total}
-                </span>{" "}
+                <span className="place_order_right_side_bold">${total}</span>{" "}
               </p>
             </div>
             <div className="place_order_right_items">
@@ -109,12 +164,24 @@ const PlaceOrder = () => {
             <div className="place_order_right_items">
               <p>Total</p>
               <p>
-                <span className="place_order_right_side_bold">
-                  ${total}
-                </span>{" "}
+                <span className="place_order_right_side_bold">${total}</span>{" "}
               </p>
             </div>
-            <button className="checkout_btn place_order_btn" onClick={placeOrderHandler}>{isLoading ? 'Loading...' : 'PLACE ORDER'}</button>
+          </div>
+        )}
+      </div>
+      <div className="place_order_payment_section">
+        {loadingPay && <Loader />}
+
+        {isPending ? (
+          <Loader className="center_aligned_loader" />
+        ) : (
+          <div>
+            <PayPalButtons
+              createOrder={createOrderPaypal}
+              onApprove={onApprove}
+              onError={onError}
+            ></PayPalButtons>
           </div>
         )}
       </div>

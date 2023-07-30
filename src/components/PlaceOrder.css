@@ -69,16 +69,9 @@
     border-bottom: 2px solid #A28140;
 }
 
-.place_order_btn {
-    border-radius: 0px 0px 25px 25px;
-    background: #A28140;
-    width: 100%;
-    color: #FFF;
-    font-family: var(--second-family);
-    font-size: 40px;
-    font-weight: 400;
-    border: none;
-    padding: 5px 25px;
+.place_order_payment_section {
+    width: 50%;
+    margin: 60px auto 30px auto;
 }
 
 @media (max-width: 1191px) and (min-width: 1000px) {
@@ -129,6 +122,9 @@
     }
     .place_order_right_side {
         width: 375px;
+    }
+    .place_order_payment_section {
+        width: 80%;
     }
 }
 
