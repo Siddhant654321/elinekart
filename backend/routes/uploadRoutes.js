@@ -22,18 +22,24 @@ function checkFileType(file, cb) {
   if (mimetype && extname) {
     return cb(null, true);
   } else {
-    cb("Images only!");
+    cb("Images only!"); 
   }
 }
 
 const upload = multer({
   storage,
+  fileFilter: (req, file, cb) => {
+    checkFileType(file, cb);
+  },
+  limits: { fileSize: 5 * 1024 * 1024 } 
 });
 
-router.post("/", upload.single("image"), (req, res) => {
+
+router.post("/", upload.array("images", 5), (req, res) => {
+  const filePaths = req.files.map(file => `/${file.path}`);
   res.send({
-    message: "Image uploaded",
-    image: `/${req.file.path}`,
+    message: "Images uploaded",
+    images: filePaths, 
   });
 });
 

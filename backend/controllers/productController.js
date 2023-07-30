@@ -35,7 +35,7 @@ const getProductById = asyncHandler(async (req, res) => {
     return res.json(product);
   } else {
     res.status(404);
-    throw new Error("Resource not found");
+    throw new Error("Product not found");
   }
 });
 
@@ -44,15 +44,15 @@ const getProductById = asyncHandler(async (req, res) => {
 // @access Private/Admin
 const createProduct = asyncHandler(async (req, res) => {
   const product = new Product({
-    name: "Sample name",
-    price: 0,
+    name: req.body.name,
+    price: req.body.price,
     user: req.user._id,
-    image: "/images/sample.jpg",
-    brand: "Sample brand",
-    category: "Sample category",
-    countInStock: 0,
+    images: req.body.images, 
+    brand: req.body.brand,
+    category: req.body.category,
+    countInStock: req.body.countInStock,
     numReviews: 0,
-    description: "Sample description",
+    description: req.body.description,
   });
   const createdProduct = await product.save();
   res.status(201).json(createdProduct);
@@ -62,8 +62,7 @@ const createProduct = asyncHandler(async (req, res) => {
 // @route   PUT /api/products/:id
 // @access  Private/Admin
 const updateProduct = asyncHandler(async (req, res) => {
-  const { name, price, description, image, brand, category, countInStock } =
-    req.body;
+  const { name, price, description, images, brand, category, countInStock } = req.body;
 
   const product = await Product.findById(req.params.id);
 
@@ -71,7 +70,7 @@ const updateProduct = asyncHandler(async (req, res) => {
     product.name = name;
     product.price = price;
     product.description = description;
-    product.image = image;
+    product.images = images; // Adjusted to accept an array of images
     product.brand = brand;
     product.category = category;
     product.countInStock = countInStock;
@@ -91,11 +90,11 @@ const deleteProduct = asyncHandler(async (req, res) => {
   const product = await Product.findById(req.params.id);
 
   if (product) {
-    await product.deleteOne({ _id: product._id });
-    res.status.json({ message: "Product deleted" });
+    await product.deleteOne();
+    res.status(200).json({ message: "Product deleted" });
   } else {
     res.status(404);
-    throw new Error("Resource not found");
+    throw new Error("Product not found");
   }
 });
 
@@ -108,7 +107,7 @@ const createProductReview = asyncHandler(async (req, res) => {
 
   if (product) {
     const alreadyReviewed = product.reviews.find(
-      (review) => review.user.toString() === req.user._id.toString(),
+      (review) => review.user.toString() === req.user._id.toString()
     );
     if (alreadyReviewed) {
       res.status(400);
@@ -125,14 +124,14 @@ const createProductReview = asyncHandler(async (req, res) => {
     product.numReviews = product.reviews.length;
 
     product.rating =
-      product.reviews.reduce((acc, review) => review.rating, 0) /
+      product.reviews.reduce((acc, review) => acc + review.rating, 0) /
       product.reviews.length;
 
     await product.save();
     res.status(201).json({ message: "Review added" });
   } else {
     res.status(404);
-    throw new Error("Resource not found");
+    throw new Error("Product not found");
   }
 });
 

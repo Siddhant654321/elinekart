@@ -24,10 +24,10 @@ const productSchema = new mongoose.Schema(
       ref: "User",
     },
     name: { type: String, required: true },
-    image: {
+    images: [{ 
       type: String,
       required: true,
-    },
+    }],
     brand: {
       type: String,
       required: true,
