@@ -11,6 +11,7 @@ import Payment from "./components/Payment";
 import PlaceOrder from "./components/PlaceOrder";
 import PrivateRoute from "./components/PrivateRoute";
 import Profile from "./components/Profile";
+import AllProducts from "./components/AllProducts";
 
 const Layout = ({ children }) => (
   <>
@@ -28,6 +29,7 @@ const router = createBrowserRouter([
       { index: true, element: <Homepage /> },
       { path: '/signin', element: <SignIn /> },
       { path: '/register', element: <Register /> },
+      { path: '/products', element: <AllProducts /> },
       { path: '/product/:id', element: <ProductPage /> },
       { path: '/cart', element: <Cart /> },
       { path: '', element: <PrivateRoute />, children: [
