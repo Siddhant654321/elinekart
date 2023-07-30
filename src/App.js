@@ -30,6 +30,9 @@ const router = createBrowserRouter([
       { path: '/signin', element: <SignIn /> },
       { path: '/register', element: <Register /> },
       { path: '/products', element: <AllProducts /> },
+      { path: '/products/search/:keyword', element: <AllProducts /> },
+      { path: '/products/page/:pageNumber', element: <AllProducts /> },
+      { path: '/products/search/:keyword/page/:pageNumber', element: <AllProducts /> },
       { path: '/product/:id', element: <ProductPage /> },
       { path: '/cart', element: <Cart /> },
       { path: '', element: <PrivateRoute />, children: [

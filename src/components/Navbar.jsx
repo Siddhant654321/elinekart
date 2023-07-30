@@ -3,12 +3,16 @@ import search_icon from '../assets/search_icon.svg';
 import close_icon from '../assets/close_icon.svg';
 import hamburger_icon from '../assets/hamburger_icon.svg';
 import { useState } from 'react';
-import { Link, Outlet, useNavigate } from 'react-router-dom';
+import { Link, Outlet, useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLogoutMutation } from '../slices/usersApiSlice';
 import { logout } from '../slices/authSlice';
 
 const Navbar = () => {
+
+  const { keyword: urlKeyword } = useParams();
+
+  const [keyword, setKeyword] = useState(urlKeyword || "");
 
   const [showMenu, setShowMenu] = useState(() => false)
 
@@ -26,6 +30,16 @@ const Navbar = () => {
       navigate("/signin");
     } catch (err) {
       console.log(err);
+    }
+  };
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    if (keyword) {
+      navigate(`/products/search/${keyword.trim()}`);
+      setKeyword("");
+    } else {
+      navigate("/");
     }
   };
 
@@ -50,11 +64,13 @@ const Navbar = () => {
             onClick={() => setShowMenu(() => false)}
           />
         )}
-        <form className={`navbar_search_container ${showMenu && "show_menu"}`}>
+        <form className={`navbar_search_container ${showMenu && "show_menu"}`} onSubmit={submitHandler}>
           <input
             type="text"
             placeholder="Search Products"
             className="navbar_search_input"
+            onChange={(e) => setKeyword(e.target.value)}
+            value={keyword}
           />
           <button type="submit" className="navbar_search_button">
             <img src={search_icon} height={34} width={34} />
