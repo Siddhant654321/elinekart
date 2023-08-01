@@ -78,6 +78,12 @@
     }
 }
 
+@media (max-width: 553px) {
+    .review_tab h3 {
+        font-size: 24px;
+    }
+}
+
 @media (max-width: 455px) {
     .review_tab p {
         font-size: 18px;

@@ -8,17 +8,30 @@
     align-items: center;
 }
 
-.product_image_container {
-    display: flex;
-    width: 50%;
-    object-fit: cover;
+.product_left_side_container {
+    flex: 1;
 }
 
 .product_image_container img {
     border-radius: 10px;
-    width: 100%;
-    height: 614px;
+    height: 500px;
+    width: 500px;
     object-fit: cover;
+}
+
+.other_images_container {
+    display: flex;
+    width: 500px;
+    gap: 15px;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.other_product_images {
+    width: 100px;
+    height: 85px;
+    object-fit: cover;
+    border-radius: 6px;
 }
 
 .product_right_side_container {
@@ -152,7 +165,7 @@
         font-size: 18px;
     }
     .product_image_container img {
-        height: 500px;
+        height: 450px;
     }
 }
 
@@ -160,6 +173,12 @@
     .product_page_add_to_cart{ 
         font-size: 28px;
         margin-top: 10px;
+    }
+    .product_details_container {
+        gap: 30px;
+    }
+    .product_page_container {
+        padding: 56px 20px;
     }
     .product_right_side_container p {
         font-size: 16px;
@@ -170,8 +189,10 @@
     .product_right_side_container {
         gap: 20px;
     }
-    .product_image_container img {
-        height: fit-content;
+    .product_image_container img,
+    .product_left_side_container,
+    .other_images_container  {
+        width: 400px;
     }
 }
 
@@ -179,8 +200,16 @@
     .product_details_container {
         flex-direction: column;
     }
+    .other_images_container,
     .product_image_container img {
-        height: 100%;
+        width: 400px;
+    }
+    .product_image_container img{
+        height: 400px;
+    }
+    .other_images_container img {
+        width: 20%;
+        height: auto;
     }
     .product_right_side_container {
         width: 100%;
@@ -199,6 +228,13 @@
 @media (max-width: 553px) {
     .product_page_add_to_cart {
         font-size: 28px;
+    }
+    .product_details_container {
+        gap: 30px;
+    }
+    .product_page_reviews_section h1 {
+        font-size: 38px;
+        margin: -40px 0px 35px 0px;
     }
 }
 
@@ -222,6 +258,13 @@
     .product_page_add_to_cart {
         margin-top: 10px;
     }
+    .other_images_container,
+    .product_image_container img {
+        width: 350px;
+    }
+    .product_image_container img{
+        height: 350px;
+    }
 }
 
 @media (max-width: 400px) {
@@ -230,6 +273,13 @@
     }
     .product_page_price {
         font-size: 24px;
+    }
+    .other_images_container,
+    .product_image_container img {
+        width: 280px;
+    }
+    .product_image_container img{
+        height: 280px;
     }
 }
 

@@ -17,6 +17,8 @@ const ProductPage = () => {
 
   const { id: productId } = useParams();
 
+  const [selectedIndex, setSelectedIndex] = useState(() => 0);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -49,8 +51,18 @@ const ProductPage = () => {
     <div>
       <main className="product_page_container">
         <section className="product_details_container">
-          <div className="product_image_container">
-            <img src={`${BASE_URL}${product?.image}`} alt={product?.name} />
+          <div className='product_left_side_container'>
+            <div className="product_image_container">
+              <img src={`${BASE_URL}${product?.image[selectedIndex]}`} alt={product?.name} />
+            </div>
+            <div className='other_images_container'>
+              {product?.image?.map((otherImages, index) => {
+                if(index === selectedIndex) {
+                  return;
+                }
+                return <img src={`${BASE_URL}${product?.image[index]}`} alt={product?.name} className='other_product_images' />
+              })}
+            </div>
           </div>
           <div className="product_right_side_container">
             <h1>{product?.name}</h1>
