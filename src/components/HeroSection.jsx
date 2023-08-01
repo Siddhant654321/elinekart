@@ -11,7 +11,7 @@ const HeroSection = () => {
           WE OFFER YOU THE <span>BEST </span> COLLECTION OF <span>GADGETS</span>
         </h1>
         <p>Your ultimate destination for the finest electronic gadgets</p>
-        <Link className="explore_btn_link_tag">
+        <Link className="explore_btn_link_tag" to="/products">
           <button className="explore_btn">
             Explore the collection <img src={arrow_icon} alt="" />
           </button>

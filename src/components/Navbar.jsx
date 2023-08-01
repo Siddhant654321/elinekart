@@ -77,6 +77,9 @@ const Navbar = () => {
           </button>
         </form>
         <div className={`navbar_links_container ${showMenu && "show_menu"}`}>
+          <Link className="navbar_links" to="/products">
+            PRODUCTS
+          </Link>
           <Link className="navbar_links" to="/cart">
             CART
           </Link>
