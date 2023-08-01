@@ -87,11 +87,13 @@ const ProductPage = () => {
           <h1>
             Reviews
           </h1>
+          {product.reviews.length === 0 ? 
+          <p className='error_message no_reviews_paragraph'>There are no reviews for this product yet.</p> :
           <div className='reviews_container'>
             {product.reviews.map((review) => {
               return <ReviewTab key={review.createdAt} comment={review.comment} name={review.name} rating={review.rating} createdAt={review.createdAt} />
             })}
-          </div>
+          </div>}
         </section>
       </main>
     </div>
