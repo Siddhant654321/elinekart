@@ -30,7 +30,7 @@ const ProductTab = ({ product }) => {
     <div className="product_tab">
       <img className="product_img" src={`${BASE_URL}${image[0]}`} alt={name} onClick={() => navigate(`product/${_id}`)} />
       <div className='product_tab_flex'>
-        <h3 className="product_title" onClick={() => navigate(`product/${_id}`)}>{name}</h3>
+        <h3 className="product_title" onClick={() => navigate(`/product/${_id}`)}>{name}</h3>
         <button className='add_to_cart_btn' disabled={product.countInStock === 0} onClick={addToCartHandler}>+</button>
       </div>
       <div className='star_rating'>
