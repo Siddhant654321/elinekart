@@ -60,7 +60,7 @@ const ProductPage = () => {
                 if(index === selectedIndex) {
                   return;
                 }
-                return <img src={`${BASE_URL}${product?.image[index]}`} alt={product?.name} className='other_product_images' />
+                return <img src={`${BASE_URL}${otherImages}`} alt={product?.name} className='other_product_images' onClick={() => setSelectedIndex(index)} />
               })}
             </div>
           </div>

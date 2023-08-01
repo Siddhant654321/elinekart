@@ -32,6 +32,7 @@
     height: 85px;
     object-fit: cover;
     border-radius: 6px;
+    cursor: pointer;
 }
 
 .product_right_side_container {
