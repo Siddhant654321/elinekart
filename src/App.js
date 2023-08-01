@@ -12,11 +12,13 @@ import PlaceOrder from "./components/PlaceOrder";
 import PrivateRoute from "./components/PrivateRoute";
 import Profile from "./components/Profile";
 import AllProducts from "./components/AllProducts";
+import ScrollToTop from "./components/ScrollToTop";
 
 const Layout = ({ children }) => (
   <>
     <Navbar />
-    <main>{children}</main>
+      <ScrollToTop />
+      <main>{children}</main>
     <Footer />
   </>
 );
