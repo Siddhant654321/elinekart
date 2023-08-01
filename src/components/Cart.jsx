@@ -2,7 +2,7 @@ import { BASE_URL } from "../constants";
 import "./Cart.css";
 import { useDispatch, useSelector } from "react-redux";
 import trash from '../assets/trash.svg'
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { addToCart, removeFromCart } from "../slices/cartSlice";
 import quantity_decrease from "../assets/quantity_decrease.svg";
 import quantity_increase from "../assets/quantity_increase.svg";
@@ -28,6 +28,12 @@ const Cart = () => {
 
   let total = 0;
 
+  if (cartItems.length === 0) {
+    return <>
+      <p className="no-items-cart">You don't have any items in your cart. <Link to="/products">Keep Shopping</Link></p>
+    </>
+  }
+  
   return (
     <div className="cart_page">
       <section>
@@ -40,7 +46,7 @@ const Cart = () => {
         {cartItems.map((product) => {
           return <div key={product._id} className="cart_product_container">
             <div>
-                <img className="cart_product_image" src={`${BASE_URL}${product.image}`} alt={product.name} />
+                <img className="cart_product_image" src={`${BASE_URL}${product.image[0]}`} alt={product.name} />
                 <h2 className="cart_product_title">{product.name}</h2>
             </div>
             <p className="cart_product_price">${product.price}</p>
