@@ -21,8 +21,8 @@ const Products = () => {
             <ProductTab key={product._id} product={product} />
           ))}
         </div>
-        {data.products.length >= 20 && <div className='more_products_btn_div'>
-          <Link className="explore_btn_link_tag" to="/products">
+        {data.products.length >= 12 && <div className='more_products_btn_div'>
+          <Link className="explore_btn_link_tag" to="/products/page/2">
             <button className="explore_btn">
               More Products <img src={arrow_icon} alt="" />
             </button>

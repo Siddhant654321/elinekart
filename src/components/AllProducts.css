@@ -1,0 +1,9 @@
+.no_products_found_err {
+    text-align: center;
+    margin-top: 10vh;
+}
+
+.no_products_found_err a {
+    color: #A28140;
+    transition: opacity 0.3s;
+}
