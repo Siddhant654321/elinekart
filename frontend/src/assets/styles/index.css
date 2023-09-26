@@ -56,3 +56,11 @@ table th {
   color: white;
   border-color: white;
 }
+
+#username{
+  color: white !important;
+}
+
+#adminmenu{
+  color: white !important;
+}
