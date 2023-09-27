@@ -64,3 +64,30 @@ table th {
 #adminmenu{
   color: white !important;
 }
+
+.product-card-images{
+  height: 214.2px;
+  object-fit: cover;
+}
+
+@media (max-width: 1198px){
+  .product-card-images{
+    height: 261.81px;
+  }
+}
+
+@media (max-width: 990px){
+  .product-card-images{
+    height: 295.63px;
+  }
+}
+
+@media (max-width: 767px){
+  .product-card-images{
+    height: fit-content;
+  }
+}
+
+.carousel-image{
+  max-height: 500px !important;
+}
