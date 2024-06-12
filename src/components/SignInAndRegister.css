@@ -143,12 +143,15 @@
         max-height: fit-content;
         gap: 35px;
     }
+
     .login_and_register_right_side {
         width: 100%;
     }
-    .login_and_register_left_side{
+
+    .login_and_register_left_side {
         width: 85%;
     }
+
     .login_and_register_img {
         max-height: fit-content;
         width: 100%;
@@ -175,6 +178,7 @@
     .login_and_register_form input {
         padding: 15px 20px 15px 10px;
         font-size: 24px;
+        max-width: 80%;
     }
 
     .login_and_register_form input {
